@@ -31,6 +31,12 @@ Documentation
     1. open command prompt
     2. cd to folder that will hold your programming projects
     3. `git clone <your project url>` 
+2. Python setup
+    These steps will install the requirements for the project to ensure you
+have what you need to get started.
+    1. install python 3.7
+    2. in command prompt, run `py -m pip --version` to ensure pip is installed
+    2. inside the project folder, run `pip install -r pip-requirements.txt`
 2. Open Pycharm and select open project, choose the root folder for the project
    you cloned from git.
 3. Run provided unit Tests
