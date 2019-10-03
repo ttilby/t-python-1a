@@ -1,7 +1,7 @@
 import datetime
 import unittest
 from unittest.mock import patch
-from src.space_travel import Planet
+from space_travel import Planet
 
 
 class PlanetTests(unittest.TestCase):
@@ -10,19 +10,19 @@ class PlanetTests(unittest.TestCase):
     def test_get_correct_age_on_mercury(self, mock_datetime):
         test_now = datetime.datetime(2019, 9, 1)
         mock_datetime.now.return_value = test_now
-        earth = Planet(planet_name='Earth', days_in_year=88)
-        years, days = earth.get_age(_birth_date=datetime.datetime(1982, 8, 1))
-        self.assertEqual(154, years)
-        self.assertEqual(7, days)
+        mercury = Planet(planet_name='Mercury', days_in_year=88)
+        years, days = mercury.get_age(_birth_date=datetime.datetime(1982, 8, 1))
+        self.assertEqual(153, years)
+        self.assertEqual(81, days)
 
     @patch('space_travel.datetime')
     def test_get_correct_age_on_venus(self, mock_datetime):
         test_now = datetime.datetime(2019, 9, 1)
         mock_datetime.now.return_value = test_now
-        earth = Planet(planet_name='Earth', days_in_year=225)
-        years, days = earth.get_age(_birth_date=datetime.datetime(1982, 8, 1))
+        venus = Planet(planet_name='Earth', days_in_year=225)
+        years, days = venus.get_age(_birth_date=datetime.datetime(1982, 8, 1))
         self.assertEqual(60, years)
-        self.assertEqual(59, days)
+        self.assertEqual(45, days)
 
     @patch('space_travel.datetime')
     def test_get_correct_age_on_earth(self, mock_datetime):
@@ -31,58 +31,58 @@ class PlanetTests(unittest.TestCase):
         earth = Planet(planet_name='Earth', days_in_year=365)
         years, days = earth.get_age(_birth_date=datetime.datetime(1982, 8, 1))
         self.assertEqual(37, years)
-        self.assertEqual(54, days)
+        self.assertEqual(40, days)
 
     @patch('space_travel.datetime')
     def test_get_correct_age_on_mars(self, mock_datetime):
         test_now = datetime.datetime(2019, 9, 1)
         mock_datetime.now.return_value = test_now
-        earth = Planet(planet_name='Earth', days_in_year=686)
-        years, days = earth.get_age(_birth_date=datetime.datetime(1982, 8, 1))
+        mars = Planet(planet_name='Mars', days_in_year=686)
+        years, days = mars.get_age(_birth_date=datetime.datetime(1982, 8, 1))
         self.assertEqual(19, years)
-        self.assertEqual(525, days)
+        self.assertEqual(511, days)
 
     @patch('space_travel.datetime')
     def test_get_correct_age_on_jupiter(self, mock_datetime):
         test_now = datetime.datetime(2019, 9, 1)
         mock_datetime.now.return_value = test_now
-        earth = Planet(planet_name='Earth', days_in_year=4329)
-        years, days = earth.get_age(_birth_date=datetime.datetime(1982, 8, 1))
+        jupiter = Planet(planet_name='jupiter', days_in_year=4329)
+        years, days = jupiter.get_age(_birth_date=datetime.datetime(1982, 8, 1))
         self.assertEqual(3, years)
-        self.assertEqual(572, days)
+        self.assertEqual(558, days)
 
     @patch('space_travel.datetime')
     def test_get_correct_age_on_saturn(self, mock_datetime):
         test_now = datetime.datetime(2019, 9, 1)
         mock_datetime.now.return_value = test_now
-        earth = Planet(planet_name='Earth', days_in_year=10753)
-        years, days = earth.get_age(_birth_date=datetime.datetime(1982, 8, 1))
+        saturn = Planet(planet_name='Saturn', days_in_year=10753)
+        years, days = saturn.get_age(_birth_date=datetime.datetime(1982, 8, 1))
         self.assertEqual(1, years)
-        self.assertEqual(2806, days)
+        self.assertEqual(2792, days)
 
     @patch('space_travel.datetime')
     def test_get_correct_age_on_uranus(self, mock_datetime):
         test_now = datetime.datetime(2019, 9, 1)
         mock_datetime.now.return_value = test_now
-        earth = Planet(planet_name='Earth', days_in_year=30664)
-        years, days = earth.get_age(_birth_date=datetime.datetime(1982, 8, 1))
+        uranus = Planet(planet_name='Uranus', days_in_year=30664)
+        years, days = uranus.get_age(_birth_date=datetime.datetime(1982, 8, 1))
         self.assertEqual(0, years)
-        self.assertEqual(13559, days)
+        self.assertEqual(13545, days)
 
     @patch('space_travel.datetime')
     def test_get_correct_age_on_neptune(self, mock_datetime):
         test_now = datetime.datetime(2019, 9, 1)
         mock_datetime.now.return_value = test_now
-        earth = Planet(planet_name='Earth', days_in_year=60148)
-        years, days = earth.get_age(_birth_date=datetime.datetime(1982, 8, 1))
+        neptune = Planet(planet_name='Neptune', days_in_year=60148)
+        years, days = neptune.get_age(_birth_date=datetime.datetime(1982, 8, 1))
         self.assertEqual(0, years)
-        self.assertEqual(13559, days)
+        self.assertEqual(13545, days)
 
     @patch('space_travel.datetime')
     def test_get_correct_age_on_pluto(self, mock_datetime):
         test_now = datetime.datetime(2019, 9, 1)
         mock_datetime.now.return_value = test_now
-        earth = Planet(planet_name='Earth', days_in_year=90735)
-        years, days = earth.get_age(_birth_date=datetime.datetime(1982, 8, 1))
+        pluto = Planet(planet_name='Earth', days_in_year=90735)
+        years, days = pluto.get_age(_birth_date=datetime.datetime(1982, 8, 1))
         self.assertEqual(0, years)
-        self.assertEqual(13559, days)
+        self.assertEqual(13545, days)
